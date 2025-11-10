@@ -49,35 +49,17 @@ A cutting-edge cannabis e-commerce platform featuring AI-powered mood detection 
    yarn install
    ```
 
-3. **Download face-api.js models**
-
-   The face detection requires ML models. Create a `public/models` directory and download the models:
-
-   ```bash
-   mkdir -p public/models
-   cd public/models
-
-   # Download required models from face-api.js GitHub
-   wget https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/tiny_face_detector_model-weights_manifest.json
-   wget https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/tiny_face_detector_model-shard1
-   wget https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/face_expression_model-weights_manifest.json
-   wget https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/face_expression_model-shard1
-   ```
-
-   Or use this helper script:
-   ```bash
-   npm run download-models
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+   The AI models will automatically download from CDN on first use (~550KB total).
 
 ## 📁 Project Structure
 
@@ -104,7 +86,7 @@ claude-site/
 │   │   └── store.ts            # Zustand state management
 │   └── types/                   # TypeScript type definitions
 ├── public/
-│   └── models/                  # face-api.js ML models
+│   └── models/                  # face-api.js ML models (optional, loaded from CDN)
 ├── package.json
 ├── tailwind.config.js
 ├── tsconfig.json
@@ -126,11 +108,12 @@ claude-site/
 
 ### Mood Detection Algorithm
 
-1. **Face Detection**: Uses TinyFaceDetector from face-api.js to locate faces in video stream
-2. **Expression Analysis**: Analyzes 7 facial expressions (happy, sad, angry, fearful, disgusted, surprised, neutral)
-3. **Mood Mapping**: Converts expressions into mood categories:
+1. **AI Model Loading**: Automatically downloads ML models from CDN on first use (with fallback to local files)
+2. **Face Detection**: Uses TinyFaceDetector from face-api.js to locate faces in video stream
+3. **Expression Analysis**: Analyzes 7 facial expressions (happy, sad, angry, fearful, disgusted, surprised, neutral)
+4. **Mood Mapping**: Converts expressions into mood categories:
    - Happy, Energetic, Relaxed, Focused, Creative, Sleepy, Anxious, Stressed, Neutral
-4. **Strain Matching**: Matches detected mood with strains tagged for those moods
+5. **Strain Matching**: Matches detected mood with strains tagged for those moods
 
 ### Recommendation Engine
 

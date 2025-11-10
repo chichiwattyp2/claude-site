@@ -15,33 +15,7 @@ This will install all required packages including:
 - Tailwind CSS
 - Zustand (state management)
 
-## Step 2: Download AI Models
-
-The face detection feature requires ML models. Download them with:
-
-```bash
-npm run download-models
-```
-
-This script will:
-- Create `public/models` directory
-- Download TinyFaceDetector model (~200KB)
-- Download Face Expression model (~350KB)
-
-### Manual Model Download (if script fails)
-
-```bash
-mkdir -p public/models
-cd public/models
-
-# Download models
-curl -O https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/tiny_face_detector_model-weights_manifest.json
-curl -O https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/tiny_face_detector_model-shard1
-curl -O https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/face_expression_model-weights_manifest.json
-curl -O https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/face_expression_model-shard1
-```
-
-## Step 3: Run Development Server
+## Step 2: Run Development Server
 
 ```bash
 npm run dev
@@ -49,7 +23,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Step 4: Test Features
+**Note**: AI models (~550KB) will automatically download from CDN when you first use the mood detection feature. No manual setup required!
+
+## Step 3: Test Features
 
 ### 🏠 Home Page
 Visit `/` to see the landing page with hero section.
@@ -76,9 +52,10 @@ Click the cart icon in navigation to view your cart.
 - Check browser console for errors
 
 ### Models Not Loading
-- Verify files exist in `public/models/`
-- Check browser console for 404 errors
-- Re-run `npm run download-models`
+- Models automatically load from CDN (requires internet connection)
+- Check browser console for network errors
+- Check if firewall is blocking CDN access (cdn.jsdelivr.net)
+- Optional: Download models locally with `npm run download-models` for offline development
 
 ### Build Errors
 - Delete `.next` folder: `rm -rf .next`
@@ -118,6 +95,20 @@ Tailwind CSS classes are used throughout. Edit `tailwind.config.js` to customize
 4. 💳 Integrate payment processing (optional)
 5. 🤖 Connect real AI API (Claude/OpenAI) for advanced chat
 6. 🚀 Deploy to Vercel
+
+## Optional: Local Model Setup
+
+By default, AI models load from CDN. For offline development or faster loading, you can download models locally:
+
+```bash
+npm run download-models
+```
+
+This creates `public/models/` with:
+- TinyFaceDetector model (~200KB)
+- Face Expression model (~350KB)
+
+The app will automatically use local models if available, falling back to CDN if not.
 
 ## Production Deployment
 

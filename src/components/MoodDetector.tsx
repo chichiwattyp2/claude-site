@@ -14,30 +14,61 @@ export default function MoodDetector({ onMoodDetected }: MoodDetectorProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState('');
   const [isActive, setIsActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentMood, setCurrentMood] = useState<DetectedMood | null>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const detectionInterval = useRef<NodeJS.Timeout | null>(null);
 
-  // Load face-api.js models
+  // Load face-api.js models from CDN
   useEffect(() => {
     const loadModels = async () => {
       try {
         setIsLoading(true);
-        const MODEL_URL = '/models'; // You'll need to add face-api.js models to public/models
+        setLoadingProgress('Loading AI models...');
 
-        // Load required models for face detection and expression recognition
-        await Promise.all([
-          faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
-          faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
-        ]);
+        // Try to load from local public/models first (for development)
+        // Fall back to CDN (for production/Vercel)
+        const MODEL_URLS = [
+          '/models', // Local development
+          'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model', // CDN fallback
+        ];
+
+        let modelsLoaded = false;
+        let lastError = null;
+
+        for (const MODEL_URL of MODEL_URLS) {
+          try {
+            setLoadingProgress(`Downloading AI models from ${MODEL_URL.includes('cdn') ? 'CDN' : 'server'}...`);
+
+            // Load required models for face detection and expression recognition
+            await Promise.all([
+              faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+              faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
+            ]);
+
+            modelsLoaded = true;
+            setLoadingProgress('AI models loaded successfully!');
+            break;
+          } catch (err) {
+            console.warn(`Failed to load models from ${MODEL_URL}:`, err);
+            lastError = err;
+            continue;
+          }
+        }
+
+        if (!modelsLoaded) {
+          throw lastError || new Error('Failed to load models from all sources');
+        }
 
         setIsLoading(false);
+        setLoadingProgress('');
       } catch (err) {
         console.error('Error loading models:', err);
-        setError('Failed to load AI models. Please refresh the page.');
+        setError('Failed to load AI models. Please check your internet connection and refresh the page.');
         setIsLoading(false);
+        setLoadingProgress('');
       }
     };
 
@@ -185,13 +216,22 @@ export default function MoodDetector({ onMoodDetected }: MoodDetectorProps) {
           )}
         </div>
 
+        {/* Loading Progress */}
+        {loadingProgress && (
+          <div className="mb-4 text-center">
+            <p className="text-sm text-cannabis-600 font-medium animate-pulse">
+              {loadingProgress}
+            </p>
+          </div>
+        )}
+
         {/* Controls */}
         <div className="flex gap-3 mb-4">
           {!isActive ? (
             <button
               onClick={startVideo}
               disabled={isLoading}
-              className="flex-1 bg-cannabis-600 text-white py-3 rounded-lg font-medium hover:bg-cannabis-700 transition-colors flex items-center justify-center gap-2 disabled:bg-gray-400"
+              className="flex-1 bg-cannabis-600 text-white py-3 rounded-lg font-medium hover:bg-cannabis-700 transition-colors flex items-center justify-center gap-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
