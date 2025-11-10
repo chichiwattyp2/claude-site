@@ -1,4 +1,4 @@
-import { Strain, MoodType } from '@/types';
+import { Strain, MoodType, StrainType } from '@/types';
 
 /**
  * Comprehensive Cannabis Strains Knowledge Base
