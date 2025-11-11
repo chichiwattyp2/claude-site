@@ -16,7 +16,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-24%',
     cbdContent: '<1%',
     bestFor: ['focused', 'energetic', 'creative', 'happy'],
-    imageUrl: '/images/strains/durban-poison.jpg',
+    imageUrl: '/images/strains/durban-poison.webp',
   },
   {
     id: 'super-sativa',
@@ -28,7 +28,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-23%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'focused', 'creative', 'happy'],
-    imageUrl: '/images/strains/super-sativa.jpg',
+    imageUrl: '/images/strains/super-sativa.webp',
   },
   {
     id: 'paradise-skunk',
@@ -40,7 +40,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '16-21%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'happy', 'creative', 'focused'],
-    imageUrl: '/images/strains/paradise-skunk.jpg',
+    imageUrl: '/images/strains/paradise-skunk.webp',
   },
   {
     id: 'bio-diesel',
@@ -52,7 +52,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-24%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'focused', 'creative', 'stressed'],
-    imageUrl: '/images/strains/bio-diesel.jpg',
+    imageUrl: '/images/strains/bio-diesel.webp',
   },
   {
     id: 'lemon-haze',
@@ -64,7 +64,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-22%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'creative', 'happy', 'focused'],
-    imageUrl: '/images/strains/lemon-haze.jpg',
+    imageUrl: '/images/strains/lemon-haze.webp',
   },
   {
     id: 'green-crack',
@@ -76,7 +76,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-24%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'focused', 'happy', 'creative'],
-    imageUrl: '/images/strains/green-crack.jpg',
+    imageUrl: '/images/strains/green-crack.webp',
   },
 
   // INDICA STRAINS
@@ -90,7 +90,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-24%',
     cbdContent: '<1%',
     bestFor: ['sleepy', 'relaxed', 'anxious', 'stressed'],
-    imageUrl: '/images/strains/purple-urkle.jpg',
+    imageUrl: '/images/strains/purple-urkle.webp',
   },
   {
     id: 'taffy-slapper',
@@ -102,7 +102,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '20-25%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'creative', 'stressed'],
-    imageUrl: '/images/strains/taffy-slapper.jpg',
+    imageUrl: '/images/strains/taffy-slapper.webp',
   },
   {
     id: 'tiger-melon',
@@ -114,7 +114,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-22%',
     cbdContent: '<1%',
     bestFor: ['relaxed', 'happy', 'sleepy', 'anxious'],
-    imageUrl: '/images/strains/tiger-melon.jpg',
+    imageUrl: '/images/strains/tiger-melon.webp',
   },
   {
     id: 'double-rainbow',
@@ -126,7 +126,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-23%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'creative', 'stressed'],
-    imageUrl: '/images/strains/double-rainbow.jpg',
+    imageUrl: '/images/strains/double-rainbow.webp',
   },
   {
     id: 'unicorn-sours',
@@ -138,7 +138,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-24%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'stressed', 'anxious'],
-    imageUrl: '/images/strains/unicorn-sours.jpg',
+    imageUrl: '/images/strains/unicorn-sours.webp',
   },
   {
     id: 'master-kush',
@@ -150,7 +150,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-22%',
     cbdContent: '<1%',
     bestFor: ['relaxed', 'focused', 'sleepy', 'anxious'],
-    imageUrl: '/images/strains/master-kush.jpg',
+    imageUrl: '/images/strains/master-kush.webp',
   },
   {
     id: 'purple-punch',
@@ -162,7 +162,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-25%',
     cbdContent: '<1%',
     bestFor: ['relaxed', 'sleepy', 'happy', 'anxious'],
-    imageUrl: '/images/strains/purple-punch.jpg',
+    imageUrl: '/images/strains/purple-punch.webp',
   },
   {
     id: 'og-kush',
@@ -174,7 +174,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-26%',
     cbdContent: '<1%',
     bestFor: ['relaxed', 'happy', 'stressed', 'anxious'],
-    imageUrl: '/images/strains/og-kush.jpg',
+    imageUrl: '/images/strains/og-kush.webp',
   },
 
   // HYBRID STRAINS
@@ -188,7 +188,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-23%',
     cbdContent: '<1%',
     bestFor: ['happy', 'creative', 'focused', 'energetic'],
-    imageUrl: '/images/strains/watermelon-yeti.jpg',
+    imageUrl: '/images/strains/watermelon-yeti.webp',
   },
   {
     id: 'giant-peach',
@@ -200,7 +200,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-22%',
     cbdContent: '<1%',
     bestFor: ['focused', 'energetic', 'relaxed', 'creative'],
-    imageUrl: '/images/strains/giant-peach.jpg',
+    imageUrl: '/images/strains/giant-peach.webp',
   },
   {
     id: 'cotton-candy',
@@ -212,7 +212,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-22%',
     cbdContent: '<1%',
     bestFor: ['happy', 'focused', 'relaxed', 'creative'],
-    imageUrl: '/images/strains/cotton-candy.jpg',
+    imageUrl: '/images/strains/cotton-candy.webp',
   },
   {
     id: 'baked-churros',
@@ -224,7 +224,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-23%',
     cbdContent: '<1%',
     bestFor: ['creative', 'relaxed', 'happy', 'stressed'],
-    imageUrl: '/images/strains/baked-churros.jpg',
+    imageUrl: '/images/strains/baked-churros.webp',
   },
   {
     id: 'apple-sauce',
@@ -236,7 +236,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-23%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'focused', 'stressed'],
-    imageUrl: '/images/strains/apple-sauce.jpg',
+    imageUrl: '/images/strains/apple-sauce.webp',
   },
   {
     id: 'berry-tonic',
@@ -248,7 +248,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '17-22%',
     cbdContent: '<1%',
     bestFor: ['relaxed', 'happy', 'focused', 'stressed'],
-    imageUrl: '/images/strains/berry-tonic.jpg',
+    imageUrl: '/images/strains/berry-tonic.webp',
   },
   {
     id: 'sorbet-guava',
@@ -260,7 +260,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '19-24%',
     cbdContent: '<1%',
     bestFor: ['energetic', 'creative', 'happy', 'focused'],
-    imageUrl: '/images/strains/sorbet-guava.jpg',
+    imageUrl: '/images/strains/sorbet-guava.webp',
   },
   {
     id: 'juicebox-grape',
@@ -272,7 +272,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-23%',
     cbdContent: '<1%',
     bestFor: ['focused', 'relaxed', 'creative', 'happy'],
-    imageUrl: '/images/strains/juicebox-grape.jpg',
+    imageUrl: '/images/strains/juicebox-grape.webp',
   },
   {
     id: 'gelato',
@@ -284,7 +284,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '20-25%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'creative', 'focused'],
-    imageUrl: '/images/strains/gelato.jpg',
+    imageUrl: '/images/strains/gelato.webp',
   },
   {
     id: 'girl-scout-cookies',
@@ -296,7 +296,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-28%',
     cbdContent: '<1%',
     bestFor: ['happy', 'relaxed', 'creative', 'stressed'],
-    imageUrl: '/images/strains/gsc.jpg',
+    imageUrl: '/images/strains/gsc.webp',
   },
   {
     id: 'birthday-cake',
@@ -308,7 +308,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '20-25%',
     cbdContent: '<1%',
     bestFor: ['happy', 'creative', 'relaxed', 'stressed'],
-    imageUrl: '/images/strains/birthday-cake.jpg',
+    imageUrl: '/images/strains/birthday-cake.webp',
   },
   {
     id: 'zkittles',
@@ -320,7 +320,7 @@ export const STRAINS_DATABASE: Strain[] = [
     thcContent: '18-24%',
     cbdContent: '<1%',
     bestFor: ['happy', 'creative', 'relaxed', 'focused'],
-    imageUrl: '/images/strains/zkittles.jpg',
+    imageUrl: '/images/strains/zkittles.webp',
   },
 ];
 
